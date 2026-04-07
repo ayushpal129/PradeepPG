@@ -240,7 +240,7 @@
             <label class="block text-gray-700 font-semibold mb-2"><i class="fas fa-bed text-amber-600 mr-1"></i> Number of beds required *</label>
             <select id="beds" class="form-select" required>
               <option value="">Select beds</option>
-              <option value="1">1 Bed </option>
+              <option value="1">1 Bed</option>
               <option value="2">2 Beds (Double Sharing)</option>
               <option value="3">3 Beds (Triple Sharing)</option>
               <option value="4">4 Beds (4 Sharing)</option>
@@ -394,11 +394,66 @@
         <i class="fas fa-map-pin text-amber-600 text-xl"></i>
         <p class="text-base md:text-lg font-medium">C-31, Near Bal Sagar Public School, Village Gijhore, Sector 53, Noida - 201301</p>
       </div>
+      
+      <!-- Google Maps Embed -->
       <div class="rounded-2xl overflow-hidden card-shadow border border-amber-200 shadow-lg">
-        <iframe title="Pradeep PG Location" class="w-full h-[400px] md:h-[450px]" src="https://www.openstreetmap.org/export/embed.html?bbox=77.3588%2C28.5725%2C77.3688%2C28.5788&layer=mapnik&marker=28.5757%2C77.3638" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <div class="bg-amber-50 py-2 text-sm text-amber-800 flex items-center justify-center gap-2 border-t border-amber-100 flex-wrap">
-          <i class="fas fa-school"></i> <span>Near Bal Sagar Public School (200m)</span>
-          <i class="fas fa-bus ml-2"></i> <span>Metro: Sector 52 Station</span>
+        <iframe 
+          title="Pradeep PG Location on Google Maps" 
+          class="w-full h-[400px] md:h-[450px]" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.578541577209!2d77.3638!3d28.5757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzMyLjUiTiA3N8KwMjEnNDkuNyJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        
+        <!-- Map Action Buttons -->
+        <div class="bg-amber-50 py-4 px-4 border-t border-amber-100">
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <span class="text-sm text-amber-800 flex items-center gap-1">
+              <i class="fas fa-school"></i> Near Bal Sagar Public School (200m)
+            </span>
+            <span class="text-sm text-amber-800 flex items-center gap-1">
+              <i class="fas fa-subway"></i> Metro: Sector 52 Station
+            </span>
+            <span class="text-sm text-amber-800 flex items-center gap-1">
+              <i class="fas fa-map-pin"></i> Plus Code: H9Q8+X95
+            </span>
+          </div>
+          
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
+            <a href="https://www.google.com/maps/search/?api=1&query=H9Q8%2BX95" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 bg-white border border-amber-300 text-amber-700 px-4 py-2 rounded-lg font-medium text-sm hover:bg-amber-50 transition-all shadow-sm">
+              <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=H9Q8%2BX95" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 hero-gradient text-white px-4 py-2 rounded-lg font-medium text-sm hover:shadow-lg transition-all">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+          </div>
+          
+          <!-- Location Details Card -->
+          <div class="mt-4 p-3 bg-amber-100/50 rounded-lg border border-amber-200">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-amber-800">
+              <div class="flex items-center justify-center gap-1">
+                <i class="fas fa-location-dot"></i>
+                <span>C-31, Village Gijhore, Sector 53</span>
+              </div>
+              <div class="flex items-center justify-center gap-1">
+                <i class="fas fa-building"></i>
+                <span>Near Bal Sagar Public School</span>
+              </div>
+              <div class="flex items-center justify-center gap-1">
+                <i class="fas fa-qrcode"></i>
+                <span>Plus Code: H9Q8+X95, Noida</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -506,7 +561,8 @@
         switch(beds) {
           case '1': bedText = '1 Bed (Single)'; break;
           case '2': bedText = '2 Beds (Double)'; break;
-         
+          case '3': bedText = '3 Beds (Triple)'; break;
+          case '4': bedText = '4 Beds (4 Sharing)'; break;
           default: bedText = beds;
         }
 
@@ -558,4 +614,3 @@
   </script>
 </body>
 </html>
-```
